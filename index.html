@@ -17,16 +17,16 @@
         <!-- Top fixed header (highscores and timer) -->
         <header class="row">
             <div class="col-md-6" id="Highscores">
-                <a href="#">View Highscores</a>
+                <a href="./highScore.html">View Highscores</a>
             </div>
             <div class="col-md-6" id="timer">
-                Time: <span id="seconds">0</span>
+                Time: <span id="time">0</span>
             </div>
 
         </header>
 
         <!-- Coding Challenge Title -->
-        <section id="title-section" style="display: block;">
+        <section id="title-section" class="show">
             <div class="row">
                 <div class="col-md-12">
                     <h1>Coding Quiz Challenge</h1>
@@ -46,24 +46,21 @@
         </section>
 
         <!-- Coding questions -->
-        <section id="quiz-section" style="display: none;">
+        <section id="quiz-section" class="hide">
             <div class="row">
-                <div class="col-md-12">
-                    <h3 id="question"></h3>
+                <div class="col-md-12 questions">
+                    <h3 id="question-title"></h3>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-12" id="choices">
-                    <button id="choice1" class="choice btn-secondary"></button>
-                    <button id="choice2" class="choice btn-secondary"></button>
-                    <button id="choice3" class="choice btn-secondary"></button>
-                    <button id="choice4" class="choice btn-secondary"></button>
+
                 </div>
             </div>
         </section>
 
         <!-- High Score section -->
-        <section id="highscore-section" style="display: none;">
+        <section id="highscore-section" class="hide">
             <div class="row">
                 <div id="high-score" class="col-md-12">
                     <h2>All done!</h2>
@@ -71,26 +68,13 @@
                     <label for="initials-area">Enter initials:</label>
                     <input type="text" name="initials-area" maxlength="4" id="initials">
                     <button id="submit-button" type="submit">Submit</button>
+                    <div id="feedback" class="feedback"></div>
                 </div>
             </div>
         </section>
 
-        <!-- Highscore Display section -->
-        <section id="highscore-display-section" style="display: none;">
-            <div class="row">
-                <div class="col-md-12" id="posts">
-                <h2>Highscores</h2>
-                <div id="highscore-post"></div>
-                <button id="clear-btn">Clear Highscores</button>
-                <button id="return-btn">Play Again</button>
-                </div>
-            </div>
-        </section>
-    </div>
-
-
-    <script type="text/javascript" src="./Resources/js/questions.js"></script>
-    <script type="text/javascript" src="./Resources/js/logic.js"></script>
+        <script type="text/javascript" src="./Resources/js/questions.js"></script>
+        <script type="text/javascript" src="./Resources/js/logic.js"></script>
 </body>
 
 </html>
