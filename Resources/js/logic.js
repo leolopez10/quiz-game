@@ -6,12 +6,13 @@ var timerId;
 // variables to reference DOM elements....................................
 var timeEl = document.querySelector("#time");
 var startBtn = document.querySelector("#startButton");
+var submitBtn = document.querySelector("#submit-button");
 var titleScreen = document.querySelector("#title-section");
 var quizScreen = document.querySelector("#quiz-section");
 var highScoreScreen = document.querySelector("#highscore-section");
 var highScoreDisplay = document.querySelector("#highscore-display-section");
 var initialsEl = document.querySelector("#initials");
-var feedback = document.querySelector("#feedback");
+var feedbackEl = document.querySelector("#feedback");
 
 var questionsEl = document.querySelector("#question");
 var choicesEl = document.querySelector("#choices");
@@ -20,8 +21,7 @@ var choicesEl = document.querySelector("#choices");
 //create a function to start the game
 function startQuiz() {
     // hide start screen
-    var titleSection = document.getElementById("#title-section");
-    titleSection.setAttribute("class", "hide");
+    titleScreen.setAttribute("class", "hide");
   
     // un-hide questions section
     quizScreen.setAttribute("class", "show");
@@ -30,7 +30,7 @@ function startQuiz() {
     timerId = setInterval(tick, 1000);
   
     // show starting time
-    timerEl.textContent = time;
+    timeEl.textContent = time;
   
     getQuestion();
   }
@@ -39,7 +39,7 @@ function startQuiz() {
   function tick() {
     // update time
     time--;
-    timerEl.textContent = time;
+    timeEl.textContent = time;
   
     // check if user ran out of time
     if (time <= 0) {
@@ -87,14 +87,12 @@ function startQuiz() {
       }
   
       // display new time on page
-      timerEl.textContent = time;
+      timeEl.textContent = time;
   
   
       feedbackEl.textContent = "Wrong!";
     } else {
-      // play "right" sound effect
-      sfxRight.play();
-  
+
       feedbackEl.textContent = "Correct!";
     }
   
@@ -155,7 +153,7 @@ function saveHighscore() {
       window.localStorage.setItem("highscores", JSON.stringify(highscores));
   
       // redirect to next page
-      window.location.href = "highscores.html";
+      window.location.href = "highScore.html";
     }
   }
 
